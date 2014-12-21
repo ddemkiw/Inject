@@ -12,25 +12,28 @@ class Array
           sum = args[0]
           while copy.length > 0
             next_item = copy.shift
-            sum = yield(sum, next_item) if block_given?
+            sum = yield(sum, next_item) 
           end
         else 
           start = args.shift
           method = args.shift.to_s
-          array = copy.insert(0,start)
+          copy.insert(0,start)
           sum =  (eval copy.join method)
         end
       else args == nil
-        first_item = copy.shift
-        second_item = copy.shift
-        sum = yield(first_item, second_item) if block_given?  
-        while copy.length > 0
-          next_item = copy.shift
-          sum = yield(sum, next_item) if block_given?
+        if block_given?
+          first_item = copy.shift
+          second_item = copy.shift
+          sum = yield(first_item, second_item)   
+            while copy.length > 0
+              next_item = copy.shift
+              sum = yield(sum, next_item) 
+            end
         end
       end
+      
     sum
-end
+  end
 
 end
 
