@@ -17,7 +17,8 @@ class Array
         else 
           start = args.shift
           method = args.shift.to_s
-          sum = start + (eval copy.join method)
+          array = copy.insert(0,start)
+          sum =  (eval copy.join method)
         end
       else args == nil
         first_item = copy.shift
@@ -30,31 +31,6 @@ class Array
       end
     sum
 end
-
-  # def new_inject(*args, &block) 
-  #   copy = self.dup
-  #   while copy.length > 0 
-  #     if copy.length == self.length
-  #       x = copy.shift
-  #       p "I am x:#{x}"
-  #       y = copy.shift
-  #       p "I am y:#{y}"
-  #     else
-  #       y = copy.shift
-  #       p "I am y shift: #{y}"
-  #     end
-  #     x = yield(x,y) if block_given?
-  #     p "I am x final: #{x}"
-  #   end
-  #   x
-  # end
-
-
-# def new_inject
-
-
-# end
-
 
 end
 
