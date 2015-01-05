@@ -1,15 +1,14 @@
-# class Array
+class Array
 
   def new_inject(arg=nil, symbol=nil, &block)
     return new_inject(&arg) if arg.is_a? Symbol
     return new_inject(arg, &symbol) if symbol
     arg ? memo = arg : memo = self.shift
-    self.each { |item| memo = block.call memo, item }
+    self.each { |item| memo = yield memo, item }
     return memo
   end
   
 end
-
 
 
 #   def new_inject(*args, &block)
@@ -19,7 +18,7 @@ end
 #         method = args.shift.to_s
 #         sum = eval copy.join method
 #       elsif args[0].is_a? Integer 
-#         if block_given?gi
+#         if block_given?
 #           sum = args[0]
 #           while copy.length > 0
 #             next_item = copy.shift
