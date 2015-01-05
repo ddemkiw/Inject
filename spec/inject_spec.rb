@@ -20,7 +20,7 @@ describe Array do
       expect([1,2,3,4].new_inject{|memo,item| memo*item}).to eq(24)
     end
 
-  end
+   end
 
     context 'with a symbol' do
 
@@ -39,7 +39,6 @@ describe Array do
       expect([1,2,3,4].new_inject(:*)).to eq(24)
       end
 
-  
   end  
 
     context 'with an argument and a block' do
