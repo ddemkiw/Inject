@@ -14,9 +14,6 @@ Rewriting the inject method for Array class
 
 Week 3 Challenge (Test) at Makers Academy
 
-## Still to complete/refactor
-
-- Some refactoring of final solution
 
 ## Reflections
 
